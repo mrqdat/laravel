@@ -21,7 +21,6 @@ class CreateNguoiChoisTable extends Migration
             $table->string("hinh_dai_dien");
             $table->integer("diem_cao_nhat");
             $table->integer("credit");
-            $table->boolean("xoa");
             $table->softDeletes();
 
             $table->timestamps();

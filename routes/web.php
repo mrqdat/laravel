@@ -16,4 +16,15 @@ Route::get('/', function () {
 
 });
 
+Route::get('Trangchu', function () {
+    return view('index');
+});
+
+Route::get('Dangnhap', function () {
+    return view('login');
+});
+Route::prefix('/Dangnhap')->group(function () {
+    Route::get('/', "QuanTriVienController@dangnhap");
+    Route::post('/',"QuanTriVienController@XuLyDangNhap")->name('xu-ly-dang-nhap');
+});
 Route::middleware('kiemtradangnhap');

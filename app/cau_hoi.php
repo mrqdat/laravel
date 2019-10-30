@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class cau_hoi extends Model
 {
     //
-    protected $table = 'cau_hoi';
+    protected $table = 'cau_hois';
 
     protected $attribute = [
+        'noi_dung',
         'dap_an'.
         'linh_vuc_id',
         'loai',

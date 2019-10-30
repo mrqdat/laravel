@@ -15,6 +15,7 @@ class CreateCauHoisTable extends Migration
     {
         Schema::create('cau_hois', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('noi_dung');
             $table->string('dap_an');
             $table->unsignedInteger("linh_vuc_id");
             $table->foreign("linh_vuc_id")->references('id')->on('linh_vucs');
@@ -23,7 +24,6 @@ class CreateCauHoisTable extends Migration
             $table->string('phuong_an_B');
             $table->string('phuong_an_C');
             $table->string('phuong_an_D');
-            $table->boolean('xoa');
             $table->softDeletes();
             $table->timestamps();
         });

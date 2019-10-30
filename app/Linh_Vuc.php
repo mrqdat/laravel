@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Linh_Vuc extends Model
 {
     //
-    protected $table =  'Linh_vuc';
+    protected $table =  'linh__vucs';
 
-    protected $attribtue = [
-        
-
+    protected $fillable = [
+        "ten_linh_vuc"
     ];
 
 }

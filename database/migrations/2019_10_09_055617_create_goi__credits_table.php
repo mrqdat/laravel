@@ -18,7 +18,6 @@ class CreateGoiCreditsTable extends Migration
             $table->string("ten_goi");
             $table->integer("credit");
             $table->integer("so_tien");
-            $table->boolean("xoa");
             $table->softDeletes();
             $table->timestamps();
         });
