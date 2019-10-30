@@ -16,5 +16,4 @@ Route::get('/', function () {
 
 });
 
-Route::middleware('kiemtradangnhap')
-
+Route::middleware('kiemtradangnhap');
