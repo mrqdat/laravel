@@ -16,6 +16,7 @@ Route::get('/', function () {
 
 });
 
+<<<<<<< HEAD
 Route::get('Trangchu', function () {
     return view('index');
 });
@@ -28,3 +29,5 @@ Route::prefix('/Dangnhap')->group(function () {
     Route::post('/',"QuanTriVienController@XuLyDangNhap")->name('xu-ly-dang-nhap');
 });
 Route::middleware('kiemtradangnhap');
+=======
+>>>>>>> parent of 4743449... small update

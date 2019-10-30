@@ -15,7 +15,12 @@ class CreateLinhVucsTable extends Migration
     {
         Schema::create('linh__vucs', function (Blueprint $table) {
             $table->bigIncrements('id');
+<<<<<<< HEAD
             $table->string('ten_linh_vuc');
+=======
+            $table->integer("ten_linh_vuc");
+            $table->boolean("xoa");
+>>>>>>> parent of 4743449... small update
             $table->softDeletes();
             $table->timestamps();
         });
