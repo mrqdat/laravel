@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use  Illuminate\Foundation\Auth\User as Authenticatable;
 
-class quan_tri_vien extends Model
+class quan_tri_vien extends Authenticatable
 {
     protected $table = 'quan_tri_viens';
 
@@ -13,4 +13,9 @@ class quan_tri_vien extends Model
         'mat_khau',
         'Hoten'
     ];
+    public function getPasswordAttribute() 
+    { 
+        return $this->mat_khau; 
+    }
+
 }
