@@ -10,7 +10,7 @@ class Linh_Vuc extends Model
     protected $table =  'linh__vucs';
 
     protected $fillable = [
-        "ten_linh_vuc"
+        'ten_linh_vuc'
     ];
 
 }

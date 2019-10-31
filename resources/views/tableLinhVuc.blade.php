@@ -4,7 +4,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Quản lý câu hỏi</h1>
+                    <h1>Quản lý lĩnh vực</h1>
                 </div>
             </div>
         </div>
@@ -12,8 +12,8 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li><a href="{{Route('indexpage')}}">Trang chủ</a></li>
-                        <li class="active">Quản lý câu hỏi</li>
+                    <li><a href="{{Route('indexpage')}}">Trang chủ</a></li>
+                        <li class="active">Quản lý lĩnh vực</li>
                     </ol>
                 </div>
             </div>
@@ -26,7 +26,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Câu hỏi</strong>
+                            <strong class="card-title">Lĩnh Vực</strong>
                         </div>
                         <div class="card-body">
                             <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -46,29 +46,14 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="white-space:nowrap">ID</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Nội dung</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Đáp án</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Lĩnh vực</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Loại</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án A</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án B</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án C</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án D</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Tên lĩnh vực</th>
                                     </tr>
                                 </thead>
-                                
                                 <tbody>
-                                    @foreach ($noidung as $item)
+                                    @foreach ($tenLinhVuc as $item)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{$item->id}}</td>
-                                        <td>{{$item->noi_dung}}</td>
-                                        <td>{{$item->dap_an}}</td>
-                                        <td>{{$item->LayLinhVuc->ten_linh_vuc}}</td>
-                                        <td>{{$item->loai}}</td>
-                                        <td>{{$item->phuong_an_A}}</td>
-                                        <td>{{$item->phuong_an_B}}</td>
-                                        <td>{{$item->phuong_an_C}}</td>
-                                        <td>{{$item->phuong_an_D}}</td>
+                                        <td>{{$item->ten_linh_vuc}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

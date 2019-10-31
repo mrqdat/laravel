@@ -46,29 +46,18 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="white-space:nowrap">ID</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Nội dung</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Đáp án</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Lĩnh vực</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Loại</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án A</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án B</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án C</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending">Phương án D</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Tên gói</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Credit</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending">Số tiền</th>
                                     </tr>
                                 </thead>
-                                
                                 <tbody>
-                                    @foreach ($noidung as $item)
+                                    @foreach ($goi as $item)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{$item->id}}</td>
-                                        <td>{{$item->noi_dung}}</td>
-                                        <td>{{$item->dap_an}}</td>
-                                        <td>{{$item->LayLinhVuc->ten_linh_vuc}}</td>
-                                        <td>{{$item->loai}}</td>
-                                        <td>{{$item->phuong_an_A}}</td>
-                                        <td>{{$item->phuong_an_B}}</td>
-                                        <td>{{$item->phuong_an_C}}</td>
-                                        <td>{{$item->phuong_an_D}}</td>
+                                        <td>{{$item->ten_goi}}</td>
+                                        <td>{{$item->credit}}</td>
+                                        <td>{{$item->so_tien}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

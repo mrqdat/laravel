@@ -64,14 +64,14 @@
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Quản lý</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="{{Route('CauHoiRoute')}}">Quản lý câu hỏi</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Quản lý lĩnh vực</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Quản lý người chơi</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Quản lý gói credit</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Quản lý lượt chơi</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-basic.html">Quản lý lịch sử</a></li>
+                        <li><i class="fa fa-table"></i><a href="{{Route('LinhVucRoute')}}">Quản lý lĩnh vực</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{Route('NguoiChoiRoute')}}">Quản lý người chơi</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{Route('GoiCreditRoute')}}">Quản lý gói credit</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{Route('LuotChoiRoute')}}">Quản lý lượt chơi</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{Route('LichSuMuaRoute')}}">Quản lý lịch sử mua</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
