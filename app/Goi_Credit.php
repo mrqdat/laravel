@@ -9,7 +9,7 @@ class Goi_Credit extends Model
     //
     protected $table = "Goi__Credits";
 
-    protected $attribute = [
+    protected $fillable = [
         'ten_goi',
         'credit',
         'so_tien'

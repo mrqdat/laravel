@@ -32,7 +32,11 @@
                             <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <div class="dataTables_length" id="bootstrap-data-table-export_length"></div>
+                                        <div class="dataTables_length" id="bootstrap-data-table-export_length">
+                                        <a href="{{route('ThemCauHoiRoute')}}" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-plus"></i> Thêm mới
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
@@ -69,6 +73,12 @@
                                         <td>{{$item->phuong_an_B}}</td>
                                         <td>{{$item->phuong_an_C}}</td>
                                         <td>{{$item->phuong_an_D}}</td>
+                                        <td><a href="#" class="btn btn-success btn-sm">
+                                            <i class="fa fa-wrench"></i> Sửa
+                                        </a></td>
+                                        <td><a href="#" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash-o"></i> Xóa
+                                        </a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

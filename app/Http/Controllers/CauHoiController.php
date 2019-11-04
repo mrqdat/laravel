@@ -14,4 +14,20 @@ class CauHoiController extends Controller
             'noidung' => $listCauHoi
         ]);
     }
+    public function ThemDataCauHoi(Request $req){
+        $noidung = $req->Noidung;
+        $dapan = $req->Dapan;
+        $idlv = $req->IdLV;
+        $loai = $req->Loai;
+        $pa = $req->PaA;
+        $pb = $req->PaB;
+        $pc = $req->PaC;
+        $pd = $req->PaD;
+        
+        cau_hoi::create(['noi_dung'=>$noidung,'dap_an'=>$dapan,'linh_vuc_id'=>$idlv,'loai'=>$loai,
+        'phuong_an_A'=>$pa,'phuong_an_B'=>$pb,'phuong_an_C'=>$pc,'phuong_an_D'=>$pd]);
+
+        return redirect()->route('CauHoiRoute');
+        
+    }
 }

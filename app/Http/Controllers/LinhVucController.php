@@ -14,4 +14,12 @@ class LinhVucController extends Controller
             'tenLinhVuc' => $listLinhVuc
         ]);
     }
+    public function ThemDataLinhVuc(Request $req){
+        $tenlv = $req->TenLV;
+
+        Linh_Vuc::create(['ten_linh_vuc'=>$tenlv]);
+
+        return redirect()->route('LinhVucRoute');
+
+    }
 }

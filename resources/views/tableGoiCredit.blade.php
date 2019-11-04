@@ -4,7 +4,7 @@
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Quản lý câu hỏi</h1>
+                    <h1>Quản lý gói Credit</h1>
                 </div>
             </div>
         </div>
@@ -13,7 +13,7 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                         <li><a href="{{Route('indexpage')}}">Trang chủ</a></li>
-                        <li class="active">Quản lý câu hỏi</li>
+                        <li class="active">Quản lý gói Credit</li>
                     </ol>
                 </div>
             </div>
@@ -26,13 +26,17 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Câu hỏi</strong>
+                            <strong class="card-title">Gói Credit</strong>
                         </div>
                         <div class="card-body">
                             <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <div class="dataTables_length" id="bootstrap-data-table-export_length"></div>
+                                        <div class="dataTables_length" id="bootstrap-data-table-export_length">
+                                        <a href="{{route('ThemGoiCreditRoute')}}" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-plus"></i> Thêm mới
+                                            </a>
+                                        </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
@@ -58,6 +62,12 @@
                                         <td>{{$item->ten_goi}}</td>
                                         <td>{{$item->credit}}</td>
                                         <td>{{$item->so_tien}}</td>
+                                        <td><a href="#" class="btn btn-success btn-sm">
+                                            <i class="fa fa-wrench"></i> Sửa
+                                        </a></td>
+                                        <td><a href="#" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash-o"></i> Xóa
+                                        </a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

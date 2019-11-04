@@ -22,7 +22,6 @@ class CreateNguoiChoisTable extends Migration
             $table->integer("diem_cao_nhat");
             $table->integer("credit");
             $table->softDeletes();
-
             $table->timestamps();
         });
     }
