@@ -72,3 +72,9 @@ Route::get('LichSuMua','LichSuMuaController@LayDataLichSuMua')->name('LichSuMuaR
 Route::middleware('kiemtradangnhap');
 
 
+
+//redirect -> chi tiet luot choi
+
+Route::get('Chitietluotchoi','ChiTietLuotChoiController@LayDataChiTietLuotChoi')->name('ChiTietLuotChoiRoute');
+
+
