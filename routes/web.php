@@ -101,4 +101,13 @@ Route::get('LichSuMua','LichSuMuaController@LayDataLichSuMua')->name('LichSuMuaR
 
 
 
+<<<<<<< HEAD
 });
+=======
+
+//redirect -> chi tiet luot choi
+
+Route::get('Chitietluotchoi','ChiTietLuotChoiController@LayDataChiTietLuotChoi')->name('ChiTietLuotChoiRoute');
+
+
+>>>>>>> 2f3b395fa8d3eaf10ef8f279c5d29b25859a0a63

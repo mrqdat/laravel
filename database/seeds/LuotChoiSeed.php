@@ -11,6 +11,6 @@ class LuotChoiSeed extends Seeder
      */
     public function run()
     {
-        //
+        $luotchoi = 
     }
 }
