@@ -18,10 +18,12 @@
     <link rel="stylesheet" href="{{asset('vendors/selectFX/css/cs-skin-elastic.css')}}">
     <link rel="stylesheet" href="{{asset('vendors/jqvmap/dist/jqvmap.min.css')}}">
 
-
+    <link rel="stylesheet" href="{{asset('assets/css/sweet-alert.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
 
 </head>
 
@@ -29,7 +31,7 @@
 
 
     <!-- Left Panel -->
-
+    
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
 
@@ -39,86 +41,25 @@
                 </button>
                 <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Logo"></a>
                 <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+               
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
-                    <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
-                            <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Social Buttons</a></li>
-                            <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
-                            <li><i class="fa fa-exclamation-triangle"></i><a href="ui-alerts.html">Alerts</a></li>
-                            <li><i class="fa fa-spinner"></i><a href="ui-progressbar.html">Progress Bars</a></li>
-                            <li><i class="fa fa-fire"></i><a href="ui-modals.html">Modals</a></li>
-                            <li><i class="fa fa-book"></i><a href="ui-switches.html">Switches</a></li>
-                            <li><i class="fa fa-th"></i><a href="ui-grids.html">Grids</a></li>
-                            <li><i class="fa fa-file-word-o"></i><a href="ui-typgraphy.html">Typography</a></li>
-                        </ul>
+                        <a href="{{route('indexpage')}}"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li class="menu-item-has-children dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Quản lý</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="{{Route('CauHoiRoute')}}">Quản lý câu hỏi</a></li>
-                        <li><i class="fa fa-table"></i><a href="{{Route('LinhVucRoute')}}">Quản lý lĩnh vực</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{Route('LinhVucRoute')}}">Quản lý lĩnh vực</a></li>
                             <li><i class="fa fa-table"></i><a href="{{Route('NguoiChoiRoute')}}">Quản lý người chơi</a></li>
                             <li><i class="fa fa-table"></i><a href="{{Route('GoiCreditRoute')}}">Quản lý gói credit</a></li>
                             <li><i class="fa fa-table"></i><a href="{{Route('LuotChoiRoute')}}">Quản lý lượt chơi</a></li>
                             <li><i class="fa fa-table"></i><a href="{{Route('LichSuMuaRoute')}}">Quản lý lịch sử mua</a></li>
                         </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
-                        </ul>
-                    </li>
-
-                    <h3 class="menu-title">Icons</h3><!-- /.menu-title -->
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Icons</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="font-fontawesome.html">Font Awesome</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="font-themify.html">Themefy Icons</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="widgets.html"> <i class="menu-icon ti-email"></i>Widgets </a>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-bar-chart"></i>Charts</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-line-chart"></i><a href="charts-chartjs.html">Chart JS</a></li>
-                            <li><i class="menu-icon fa fa-area-chart"></i><a href="charts-flot.html">Flot Chart</a></li>
-                            <li><i class="menu-icon fa fa-pie-chart"></i><a href="charts-peity.html">Peity Chart</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>Maps</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
-                        </ul>
-                    </li>
-                    <h3 class="menu-title">Extras</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Pages</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Login</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Register</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Forget Pass</a></li>
-                        </ul>
-                    </li>
+                    </li>                
                 </ul>
             </div><!-- /.navbar-collapse -->
         </nav>
@@ -224,7 +165,7 @@
 
                             <a class="nav-link" href="#"><i class="fa fa-cog"></i> Settings</a>
 
-                            <a class="nav-link" href="#"><i class="fa fa-power-off"></i> Logout</a>
+                            <a class="nav-link" href="{{route('DangXuatRoute')}}"><i class="fa fa-power-off"></i> Logout</a>
                         </div>
                     </div>
 
@@ -252,23 +193,26 @@
             </div>
 
         </header><!-- /header -->
-        
+        @include('notification')
         @yield('content')
+        
     </div><!-- /#right-panel -->
 
     <!-- Right Panel -->
 
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{{asset('vendors/popper.js/dist/umd/popper.min.js')}}"></script>
+    <script src="{{asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
 
-    <script src="vendors/chart.js/dist/Chart.bundle.min.js"></script>
-    <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/widgets.js"></script>
-    <script src="vendors/jqvmap/dist/jquery.vmap.min.js"></script>
-    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="{{asset('vendors/chart.js/dist/Chart.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/dashboard.js')}}"></script>
+    <script src="{{asset('assets/js/widgets.js')}}"></script>
+    <script src="{{asset('vendors/jqvmap/dist/jquery.vmap.min.js')}}"></script>
+    <script src="{{asset('vendors/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
+    <script src="{{asset('vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{asset('vendors/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{asset('assets/js/sweet-alert.min.js')}}"></script>
+    <script src="{{asset('assets/js/toastr.min.js')}}"></script>
     <script>
         (function($) {
             "use strict";

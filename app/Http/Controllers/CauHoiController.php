@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Components\Notification;
 
 use Illuminate\Http\Request;
 use App\cau_hoi;
 
 class CauHoiController extends Controller
 {
+    use Notification;
     public function LayDataCauHoi(){
         $listCauHoi = cau_hoi::all();
 
@@ -29,5 +31,18 @@ class CauHoiController extends Controller
 
         return redirect()->route('CauHoiRoute');
         
+    }
+    
+    public function XoaDataCauHoi($id){
+        $cauhoi = cau_hoi::find($id);
+        
+        if($cauhoi == null){
+            self::error('Deleted failed');
+            return redirect()->route('CauHoiRoute');
+        
+        }
+        $cauhoi->delete();
+        self::success('Deleted success');
+        return redirect()->route('CauHoiRoute');
     }
 }

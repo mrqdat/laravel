@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class cau_hoi extends Model
 {
+    use SoftDeletes;
+
     //
     protected $table = 'cau_hois';
 

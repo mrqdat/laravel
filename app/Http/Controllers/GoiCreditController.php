@@ -18,4 +18,19 @@ class GoiCreditController extends Controller
         Goi_Credit::create(['ten_goi'=>$req->tengoi,'credit'=>$req->socredit,'so_tien'=>$req->sotien]);
         return redirect()->route('GoiCreditRoute');
     }
+
+
+    //Xóa Gói Credit
+    public function XoaDataGoiCredit($id){
+        $goicredit = Goi_Credit::find($id);
+        
+        if($goicredit == null){
+            self::error('Deleted failed');
+            return redirect()->route('GoiCreditRoute');
+        
+        }
+        $goicredit->delete();
+        self::success('Deleted success');
+        return redirect()->route('GoiCreditRoute');
+    }
 }
