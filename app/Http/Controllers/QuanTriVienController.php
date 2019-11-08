@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Components\Notification;
 
 use Illuminate\Http\Request;
 use App\quan_tri_vien;
@@ -10,6 +11,8 @@ use App\Http\Requests\DangNhapRequest;
 
 class QuanTriVienController extends Controller
 {
+    use Notification;
+    
     public function dangnhap(){
         return view('login');
     }
@@ -19,12 +22,12 @@ class QuanTriVienController extends Controller
         $matKhau = $req->password;
 
         if(Auth::attempt(['ten_dang_nhap' => $tenDangNhap, 'password' => $matKhau])){
-            echo "<script>alert('Đăng nhập thành công')</script>";
+            self::success('Login success! Hello '.$tenDangNhap);
             return Redirect()->route('admindangnhap');
         }
         else{
-            echo "<script>alert('Đăng nhập thất bại')</script>";
-            return view('login'); 
+            echo "<script> </script>"
+            return Redirect()->route('TrangDangNhap'); 
         }        
     }
     public function dangxuat(){

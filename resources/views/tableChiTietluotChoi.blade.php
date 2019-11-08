@@ -13,7 +13,7 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                         <li><a href="{{Route('indexpage')}}">Trang chủ</a></li>
-                        <li class="active">Quản lý câu hỏi</li>
+                        <li class="active">Quản lý chi tiết lượt chơi</li>
                     </ol>
                 </div>
             </div>
@@ -26,16 +26,14 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Câu hỏi</strong>
+                            <strong class="card-title">Chi tiết lượt chơi</strong>
                         </div>
                         <div class="card-body">
                             <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="dataTables_length" id="bootstrap-data-table-export_length">
-                                        <a href="{{route('ThemCauHoiRoute')}}" class="btn btn-primary btn-sm">
-                                                <i class="fa fa-plus"></i> Thêm mới
-                                            </a>
+                                        
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
@@ -61,7 +59,7 @@
                                     @foreach ($ChiTietLuotChoi as $item)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{$item->id}}</td>
-                                        <td>{{$item->layCTLuotChoi->nguoi_choi_id}}</td>
+                                        <td>{{$item->layCTLuotChoi->LayTenNguoiChoi->ten_dang_nhap}}</td>
                                         <td>{{$item->laycauhoi->noi_dung}}</td>
                                         <td>{{$item->phuong_an}}</td>
                                         <td>{{$item->diem}}</td>

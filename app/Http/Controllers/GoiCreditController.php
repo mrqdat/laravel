@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Components\Notification;
 
 use Illuminate\Http\Request;
 use App\Goi_Credit;
 
 class GoiCreditController extends Controller
 {
+    use Notification;
     public function LayDataGoiCredit(){
         $listGoi = Goi_Credit::all();
         
@@ -18,7 +20,6 @@ class GoiCreditController extends Controller
         Goi_Credit::create(['ten_goi'=>$req->tengoi,'credit'=>$req->socredit,'so_tien'=>$req->sotien]);
         return redirect()->route('GoiCreditRoute');
     }
-
 
     //Xóa Gói Credit
     public function XoaDataGoiCredit($id){

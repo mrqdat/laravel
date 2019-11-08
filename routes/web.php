@@ -36,13 +36,15 @@ Route::middleware('auth')->group(function(){
         return view('index');   
     })->name('admindangnhap');
 
+
+
+
 //----------------------Trang Quản lý
 //-----------qua trang ql câu hỏi
 Route::get('Cauhoi', 'CauHoiController@LayDataCauHoi')->name('CauHoiRoute');
     //From Thêm câu hỏi
     Route::get('ThemCauHoi',function(){
-        return view('ThemCH');
-    })->name('ThemCauHoiRoute');
+        return view('ThemCH');})->name('ThemCauHoiRoute');
     //Xử lí thêm mới CH
     Route::post('ThemMoiCH', 'CauHoiController@ThemDataCauHoi')->name('ThemMoiCauHoiRoute');
     //Xoa cau hoi
@@ -83,7 +85,7 @@ Route::get('GoiCredit','GoiCreditController@LayDataGoiCredit')->name('GoiCreditR
     })->name('ThemGoiCreditRoute');
     //Xử lí thêm mới gói credit
     Route::post('ThemMoiGoiCredit','GoiCreditController@ThemDataGoiCredit')->name('ThemMoiGoiCreditRoute');
-
+    Route::get('/Xoagoicredit/{$id}','GoiCreditController@XoaDataGoiCredit')->name('XoaGoiCreditRoute');
 
 
 
@@ -101,13 +103,8 @@ Route::get('LichSuMua','LichSuMuaController@LayDataLichSuMua')->name('LichSuMuaR
 
 
 
-<<<<<<< HEAD
-});
-=======
 
 //redirect -> chi tiet luot choi
 
 Route::get('Chitietluotchoi','ChiTietLuotChoiController@LayDataChiTietLuotChoi')->name('ChiTietLuotChoiRoute');
-
-
->>>>>>> 2f3b395fa8d3eaf10ef8f279c5d29b25859a0a63
+});

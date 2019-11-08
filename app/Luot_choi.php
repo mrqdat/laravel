@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Luot_choi extends Model
 {
-    use SoftDeletes;
     //
     protected $table =  'luot_chois';
 
@@ -17,4 +16,9 @@ class Luot_choi extends Model
         'ngay_gio'
     ];
 
+    public function LayTenNguoiChoi(){
+        
+        return $this->belongsTo('App\Nguoi_choi', 'nguoi_choi_id', 'id');
+        
+    }
 }

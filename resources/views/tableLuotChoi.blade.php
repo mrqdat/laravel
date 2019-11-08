@@ -50,13 +50,20 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="white-space:nowrap">ID</th>
-                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Tên lĩnh vực</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Người chơi</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Số câu</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Điểm</th>
+                                        <th class="sorting" style="white-space:nowrap" tabindex="0" aria-controls="bootstrap-data-table-export" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending">Thời gian</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($luotchoi as $item)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{$item->id}}</td>
+                                        <td>{{$item->LayTenNguoiChoi->ten_dang_nhap}}</td>
+                                        <td>{{$item->so_cau}}</td>
+                                        <td>{{$item->diem}}</td>
+                                        <td>{{$item->ngay_gio}}</td>
                                         <td><a href="#" class="btn btn-success btn-sm">
                                             <i class="fa fa-wrench"></i> Sửa
                                         </a></td>

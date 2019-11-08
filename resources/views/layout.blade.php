@@ -57,6 +57,7 @@
                             <li><i class="fa fa-table"></i><a href="{{Route('NguoiChoiRoute')}}">Quản lý người chơi</a></li>
                             <li><i class="fa fa-table"></i><a href="{{Route('GoiCreditRoute')}}">Quản lý gói credit</a></li>
                             <li><i class="fa fa-table"></i><a href="{{Route('LuotChoiRoute')}}">Quản lý lượt chơi</a></li>
+                            <li><i class="fa fa-table"></i><a href="{{Route('ChiTietLuotChoiRoute')}}">Quản lý chi tiết lượt chơi</a></li>
                             <li><i class="fa fa-table"></i><a href="{{Route('LichSuMuaRoute')}}">Quản lý lịch sử mua</a></li>
                         </ul>
                     </li>                

@@ -15,4 +15,5 @@ class LuotChoiController extends Controller
             'luotchoi' => $listLuotchoi
         ]);
     }
+    
 }

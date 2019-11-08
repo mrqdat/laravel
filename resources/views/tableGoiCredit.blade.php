@@ -65,7 +65,7 @@
                                         <td><a href="#" class="btn btn-success btn-sm">
                                             <i class="fa fa-wrench"></i> Sửa
                                         </a></td>
-                                    <td><a href="{{route('XoaCredit')}}" class="btn btn-danger btn-sm">
+                                    <td><a href="{{route('XoaGoiCreditRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i> Xóa
                                         </a></td>
                                     </tr>
