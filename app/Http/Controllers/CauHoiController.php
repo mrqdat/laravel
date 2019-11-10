@@ -28,7 +28,8 @@ class CauHoiController extends Controller
         
         cau_hoi::create(['noi_dung'=>$noidung,'dap_an'=>$dapan,'linh_vuc_id'=>$idlv,'loai'=>$loai,
         'phuong_an_A'=>$pa,'phuong_an_B'=>$pb,'phuong_an_C'=>$pc,'phuong_an_D'=>$pd]);
-
+        
+        self::success('Add success');
         return redirect()->route('CauHoiRoute');
         
     }

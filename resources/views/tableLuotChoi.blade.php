@@ -33,9 +33,7 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="dataTables_length" id="bootstrap-data-table-export_length">
-                                            <a href="#" class="btn btn-primary btn-sm">
-                                                <i class="fa fa-plus"></i> Thêm mới
-                                            </a>
+                                            
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
@@ -63,10 +61,7 @@
                                         <td>{{$item->LayTenNguoiChoi->ten_dang_nhap}}</td>
                                         <td>{{$item->so_cau}}</td>
                                         <td>{{$item->diem}}</td>
-                                        <td>{{$item->ngay_gio}}</td>
-                                        <td><a href="#" class="btn btn-success btn-sm">
-                                            <i class="fa fa-wrench"></i> Sửa
-                                        </a></td>
+                                        <td>{{$item->ngay_gio}}</td>2
                                         <td><a href="#" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i> Xóa
                                         </a></td>

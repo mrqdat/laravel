@@ -34,7 +34,7 @@
                                     <div class="col-sm-12 col-md-6">
                                         <div class="dataTables_length" id="bootstrap-data-table-export_length">
                                         <a href="{{route('ThemGoiCreditRoute')}}" class="btn btn-primary btn-sm">
-                                                <i class="fa fa-plus"></i> Thêm mới
+                                                <i class="fa fa-plus"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -63,10 +63,10 @@
                                         <td>{{$item->credit}}</td>
                                         <td>{{$item->so_tien}}</td>
                                         <td><a href="#" class="btn btn-success btn-sm">
-                                            <i class="fa fa-wrench"></i> Sửa
+                                            <i class="fa fa-wrench"></i>
                                         </a></td>
                                     <td><a href="{{route('XoaGoiCreditRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-trash-o"></i> Xóa
+                                            <i class="fa fa-trash-o"></i>
                                         </a></td>
                                     </tr>
                                     @endforeach

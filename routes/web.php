@@ -85,7 +85,7 @@ Route::get('GoiCredit','GoiCreditController@LayDataGoiCredit')->name('GoiCreditR
     })->name('ThemGoiCreditRoute');
     //Xử lí thêm mới gói credit
     Route::post('ThemMoiGoiCredit','GoiCreditController@ThemDataGoiCredit')->name('ThemMoiGoiCreditRoute');
-    Route::get('/Xoagoicredit/{$id}','GoiCreditController@XoaDataGoiCredit')->name('XoaGoiCreditRoute');
+    Route::get('/Xoagoicredit/{id}','GoiCreditController@XoaDataGoiCredit')->name('XoaGoiCreditRoute');
 
 
 

@@ -25,7 +25,8 @@ class DangNhapRequest extends FormRequest
     {
         return [
             'username'     =>'required',
-            'password'     =>'required'
+            'password'     =>'required',
+            
         ];
     }
     public function messages(){

@@ -26,8 +26,8 @@ class QuanTriVienController extends Controller
             return Redirect()->route('admindangnhap');
         }
         else{
-            echo "<script> </script>"
-            return Redirect()->route('TrangDangNhap'); 
+            echo "<script>alert('Login failed')</script>";
+            return view('login'); 
         }        
     }
     public function dangxuat(){

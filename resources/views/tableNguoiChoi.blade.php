@@ -65,10 +65,10 @@
                                         <td>{{$item->diem_cao_nhat}}</td>
                                         <td>{{$item->credit}}</td>
                                         <td><a href="#" class="btn btn-success btn-sm">
-                                            <i class="fa fa-wrench"></i> Sửa
+                                            <i class="fa fa-wrench"></i>
                                         </a></td>
                                         <td><a href="#" class="btn btn-danger btn-sm">
-                                            <i class="fa fa-trash-o"></i> Xóa
+                                            <i class="fa fa-trash-o"></i>
                                         </a></td>
                                     </tr>
                                     @endforeach
