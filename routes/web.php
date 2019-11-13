@@ -42,11 +42,14 @@ Route::middleware('auth')->group(function(){
 //----------------------Trang Quản lý
 //-----------qua trang ql câu hỏi
 Route::get('Cauhoi', 'CauHoiController@LayDataCauHoi')->name('CauHoiRoute');
+
     //From Thêm câu hỏi
     Route::get('ThemCauHoi',function(){
         return view('ThemCH');})->name('ThemCauHoiRoute');
+
     //Xử lí thêm mới CH
     Route::post('ThemMoiCH', 'CauHoiController@ThemDataCauHoi')->name('ThemMoiCauHoiRoute');
+
     //Xoa cau hoi
     Route::get('/XoaCauHoi/{id}','CauHoiController@XoaDataCauHoi')->name('XoaCauHoi');
 
@@ -69,7 +72,7 @@ Route::get('LinhVuc', 'LinhVucController@LayDataLinhVuc')->name('LinhVucRoute');
 
 
 
-//qua trang ql người chơi
+//qua trang ql người chơi --------------------------DAT
 Route::get('NguoiChoi','NguoiChoiController@LayDataNguoiChoi')->name('NguoiChoiRoute');
 
 
@@ -77,12 +80,14 @@ Route::get('NguoiChoi','NguoiChoiController@LayDataNguoiChoi')->name('NguoiChoiR
 
 
 
-//-----------qua trang ql gói credit
+//-----------qua trang ql gói credit --------------------------THIEN
 Route::get('GoiCredit','GoiCreditController@LayDataGoiCredit')->name('GoiCreditRoute');
+
     //From thêm gói credit
     Route::get('ThemGoiCredit',function(){
         return view('ThemGoiCredit');
     })->name('ThemGoiCreditRoute');
+
     //Xử lí thêm mới gói credit
     Route::post('ThemMoiGoiCredit','GoiCreditController@ThemDataGoiCredit')->name('ThemMoiGoiCreditRoute');
     Route::get('/Xoagoicredit/{id}','GoiCreditController@XoaDataGoiCredit')->name('XoaGoiCreditRoute');
@@ -90,21 +95,21 @@ Route::get('GoiCredit','GoiCreditController@LayDataGoiCredit')->name('GoiCreditR
 
 
 
-//qua trang ql lượt chơi
+//qua trang ql lượt chơi --------------------------DAT
 Route::get('LuotChoi','LuotChoiController@LayDataLuotChoi')->name('LuotChoiRoute');
 
 
 
 
 
-//qua trang ql lịch sử mua
+//qua trang ql lịch sử mua --------------------------THIEN
 Route::get('LichSuMua','LichSuMuaController@LayDataLichSuMua')->name('LichSuMuaRoute');
 
 
 
 
 
-//redirect -> chi tiet luot choi
+//redirect -> chi tiet luot choi --------------------------DAT
 
 Route::get('Chitietluotchoi','ChiTietLuotChoiController@LayDataChiTietLuotChoi')->name('ChiTietLuotChoiRoute');
 });
