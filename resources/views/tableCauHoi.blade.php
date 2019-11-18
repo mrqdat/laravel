@@ -73,7 +73,7 @@
                                         <td>{{$item->phuong_an_B}}</td>
                                         <td>{{$item->phuong_an_C}}</td>
                                         <td>{{$item->phuong_an_D}}</td>
-                                        <td><a href="#" class="btn btn-success btn-sm">
+                                        <td><a href="{{Route('SuaCauHoiRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-wrench"></i>
                                         </a></td>
                                     <td><a href="{{route('XoaCauHoi',["id"=>$item->id])}}" class="btn btn-danger btn-sm">

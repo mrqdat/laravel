@@ -44,11 +44,16 @@ Route::middleware('auth')->group(function(){
 Route::get('Cauhoi', 'CauHoiController@LayDataCauHoi')->name('CauHoiRoute');
 
     //From Thêm câu hỏi
-    Route::get('ThemCauHoi',function(){
-        return view('ThemCH');})->name('ThemCauHoiRoute');
+    Route::get('ThemCauHoi','CauHoiController@FormThemCauHoi')->name('ThemCauHoiRoute');
 
     //Xử lí thêm mới CH
     Route::post('ThemMoiCH', 'CauHoiController@ThemDataCauHoi')->name('ThemMoiCauHoiRoute');
+
+    //Form Sửa câu hỏi
+    Route::get('SuaCauHoi/{id}','CauHoiController@TimCauHoi')->name('SuaCauHoiRoute');
+
+    //Cập Nhật Câu hỏi
+    Route::post('CapNhatCauHoi/{id}', 'CauHoiController@CapNhatCauHoi')->name('CapNhatCauHoiRoute');
 
     //Xoa cau hoi
     Route::get('/XoaCauHoi/{id}','CauHoiController@XoaDataCauHoi')->name('XoaCauHoi');
@@ -62,10 +67,16 @@ Route::get('Cauhoi', 'CauHoiController@LayDataCauHoi')->name('CauHoiRoute');
 Route::get('LinhVuc', 'LinhVucController@LayDataLinhVuc')->name('LinhVucRoute');
     //From Thêm lĩnh vực
     Route::get('ThemLinhVuc',function(){
-        return view('ThemLV');
-    })->name('ThemLinhVucRoute');
+        return view('ThemLV'); })->name('ThemLinhVucRoute');
+
     //Xử lí thêm mới LV
-    Route::post('ThemMoiLV', 'LinhVucController@ThemDataLinhVuc')->name('ThemMoiLinhVucRoute');                 
+    Route::post('ThemMoiLV', 'LinhVucController@ThemDataLinhVuc')->name('ThemMoiLinhVucRoute');
+
+    //Form sửa linh vực
+    Route::get('SuaLinhVuc/{id}', 'LinhVucController@TimLinhVuc')->name('SuaLinhVucRoute');
+
+    //Xử lí sửa lĩnh vực
+   Route::post('CapNhatLinhVuc/{id}', 'LinhVucController@CapNhatLinhVuc')->name('CapNhatLinhVucRoute');                
 
 
 

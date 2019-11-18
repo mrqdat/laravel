@@ -58,7 +58,7 @@
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{$item->id}}</td>
                                         <td>{{$item->ten_linh_vuc}}</td>
-                                        <td><a href="#" class="btn btn-success btn-sm">
+                                    <td><a href="{{Route('SuaLinhVucRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-wrench"></i>
                                         </a></td>
                                         <td><a href="#" class="btn btn-danger btn-sm">
