@@ -33,7 +33,7 @@
                     <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="PaD" value="{{$cauhoifind->phuong_an_D}}">
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">
-                        <i class="fa fa-plus"></i> Cập nhật
+                        <i class="fa fa-wrench"></i> Cập nhật
                 </button>
             </div>
         </form>

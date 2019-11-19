@@ -22,6 +22,7 @@ class LinhVucController extends Controller
 
         //thêm mới lĩnh vực
         Linh_Vuc::create(['ten_linh_vuc'=>$tenlv]);
+        self::success('Add success');
         return redirect()->route('LinhVucRoute');
 
     }
@@ -47,5 +48,49 @@ class LinhVucController extends Controller
             self::success('Update success');
             return redirect()->route('LinhVucRoute');
         }
+    }
+
+    public function XoaLinhVuc($id){
+        $linhvuc = Linh_Vuc::find($id);
+        
+        if($linhvuc == null){
+            self::error('Add Linh Vuc in Recycle');
+            return redirect()->route('LinhVucRoute');
+        
+        }
+        $linhvuc->delete();
+        self::success('+1 Linh Vuc in Recycle');
+        return redirect()->route('LinhVucRoute');
+    }
+
+    //Thùng rác 
+    public function ThungRac()
+    {
+        //Tìm lĩnh vực đã xóa
+        $linhvuc = Linh_Vuc::onlyTrashed()
+                    ->orderBy('deleted_at', 'desc')->get();
+
+        return view('ThungRacLinhVuc',['linhvucdaxoa'=>$linhvuc]);
+    }
+
+    //Khôi phục khi đã xóa
+    public function KhoiPhuc($id)
+    {
+        $linhvuc = Linh_Vuc::withTrashed()
+                    ->where('id','=',$id)
+                    ->restore();
+
+        self::success('Restore success');
+        return redirect()->route('ThungRacLVRoute');
+    }
+
+    //Xóa vĩnh viễn
+    public function Xoa($id)
+    {
+
+        $linhvuc = Linh_Vuc::where('id',$id)->forceDelete();
+        self::success('Deleted success');
+                    
+        return redirect()->route('ThungRacLVRoute');
     }
 }

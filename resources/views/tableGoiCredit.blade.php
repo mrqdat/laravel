@@ -62,7 +62,7 @@
                                         <td>{{$item->ten_goi}}</td>
                                         <td>{{$item->credit}}</td>
                                         <td>{{$item->so_tien}}</td>
-                                        <td><a href="#" class="btn btn-success btn-sm">
+                                        <td><a href="{{route('SuaGoiCreditRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-wrench"></i>
                                         </a></td>
                                     <td><a href="{{route('XoaGoiCreditRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">

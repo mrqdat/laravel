@@ -13,7 +13,7 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                     <li><a href="{{Route('indexpage')}}">Trang chủ</a></li>
-                        <li class="active">Quản lý lĩnh vực</li>
+                        <li class="active">Lĩnh vực đã xóa</li>
                     </ol>
                 </div>
             </div>
@@ -26,27 +26,22 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Lĩnh Vực</strong>
+                            <strong class="card-title">Lĩnh Vực đã xóa</strong>
                         </div>
                         <div class="card-body">
                             <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row animated">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="dataTables_length" id="bootstrap-data-table-export_length">
-                                            <a href="{{Route('ThemLinhVucRoute')}}" class="btn btn-primary btn-sm">
-                                                <i class="fa fa-plus"></i>
+                                            <a href="{{Route('LinhVucRoute')}}" class="btn btn-primary btn-sm">
+                                                Quản lí lĩnh vực
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-3">
+                                    <div class="col-sm-12 col-md-6">
                                         <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
                                             <label><input type="search" class="form-control form-control-sm" placeholder="Tìm kiếm" aria-controls="bootstrap-data-table-export"></label>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-3">
-                                        <a href="{{Route('ThungRacLVRoute')}}" class="btn btn-danger btn-sm">
-                                            Thùng rác
-                                        </a>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -59,14 +54,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($tenLinhVuc as $item)
+                                    @foreach ($linhvucdaxoa as $item)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{$item->id}}</td>
                                         <td>{{$item->ten_linh_vuc}}</td>
-                                    <td><a href="{{Route('SuaLinhVucRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
-                                            <i class="fa fa-wrench"></i>
+                                    <td><a href="{{Route('KhoiPhucLinhVucRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
+                                            <i class="fa fa-undo"></i>
                                         </a></td>
-                                        <td><a href="{{Route('XoaLinhVucRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
+                                        <td><a href="{{Route('XoaVVLinhVucRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i>
                                         </a></td>
                                     </tr>

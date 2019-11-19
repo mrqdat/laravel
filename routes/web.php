@@ -76,7 +76,19 @@ Route::get('LinhVuc', 'LinhVucController@LayDataLinhVuc')->name('LinhVucRoute');
     Route::get('SuaLinhVuc/{id}', 'LinhVucController@TimLinhVuc')->name('SuaLinhVucRoute');
 
     //Xử lí sửa lĩnh vực
-   Route::post('CapNhatLinhVuc/{id}', 'LinhVucController@CapNhatLinhVuc')->name('CapNhatLinhVucRoute');                
+   Route::post('CapNhatLinhVuc/{id}', 'LinhVucController@CapNhatLinhVuc')->name('CapNhatLinhVucRoute'); 
+   
+   //Xóa Lĩnh vực
+   Route::get('XoaLinhVuc/{id}','LinhVucController@XoaLinhVuc')->name('XoaLinhVucRoute');
+
+   //Thùng rác lĩnh vực
+   Route::get('ThungRacLinhVuc', 'LinhVucController@ThungRac')->name('ThungRacLVRoute');
+
+   //Khôi phục lĩnh vực
+   Route::get('KhoiPhucLinhVuc/{id}', 'LinhVucController@KhoiPhuc')->name('KhoiPhucLinhVucRoute');
+
+   //Xóa lĩnh vực khỏi thùng rác
+   Route::get('Xoa/{id}', 'LinhVucController@Xoa')->name('XoaVVLinhVucRoute');
 
 
 
@@ -96,11 +108,18 @@ Route::get('GoiCredit','GoiCreditController@LayDataGoiCredit')->name('GoiCreditR
 
     //From thêm gói credit
     Route::get('ThemGoiCredit',function(){
-        return view('ThemGoiCredit');
-    })->name('ThemGoiCreditRoute');
+        return view('ThemGoiCredit'); })->name('ThemGoiCreditRoute');
 
     //Xử lí thêm mới gói credit
     Route::post('ThemMoiGoiCredit','GoiCreditController@ThemDataGoiCredit')->name('ThemMoiGoiCreditRoute');
+
+    //Hiển thị from sửa
+    Route::get('SuaGoiCredit/{id}', 'GoiCreditController@TimGoiCredit')->name('SuaGoiCreditRoute');
+
+    //Cập nhật gói credit
+    Route::post('CapNhatGoiCredit/{id}', 'GoiCreditController@CapNhatGoiCredit')->name('CapNhatGoiCreditRoute');
+
+    //Xóa gói credit
     Route::get('/Xoagoicredit/{id}','GoiCreditController@XoaDataGoiCredit')->name('XoaGoiCreditRoute');
 
 
