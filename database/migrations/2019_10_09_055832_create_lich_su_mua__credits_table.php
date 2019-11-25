@@ -22,7 +22,6 @@ class CreateLichSuMuaCreditsTable extends Migration
             $table->integer("credit");
             $table->integer("so_tien");
             $table->softDeletes();
-
             $table->timestamps();
         });
     }
