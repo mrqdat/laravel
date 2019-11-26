@@ -37,7 +37,13 @@ class CauHoiController extends Controller
         $pb = $req->PaB;
         $pc = $req->PaC;
         $pd = $req->PaD;
-        
+        if($noidung==""||$dapan==""||$idlv==""||$loai==""||$pa==""||$pb==""||$pc==""||$pd=="")
+        {
+            self::error('Không được để trống!');
+            return redirect()->route('ThemCauHoiRoute');
+        }
+        else
+        {
         //Tạo câu hỏi
         cau_hoi::create(
             ['noi_dung'=>$noidung,
@@ -52,6 +58,7 @@ class CauHoiController extends Controller
         
         self::success('Add success');
         return redirect()->route('CauHoiRoute');
+    }
         
     }
 
@@ -95,17 +102,51 @@ class CauHoiController extends Controller
         }
     }
     
-    //Xóa câu hỏi vừa chọn
+    //Thêm câu hỏi vừa chọn vào thùng rác
     public function XoaDataCauHoi($id){
         $cauhoi = cau_hoi::find($id);
         
         if($cauhoi == null){
-            self::error('Deleted failed');
+            self::error('Add Cau Hoi i
++            n Recycle false!');
             return redirect()->route('CauHoiRoute');
         
         }
         $cauhoi->delete();
-        self::success('Deleted success');
+        self::success('+1 Cau Hoi in Recycle');
         return redirect()->route('CauHoiRoute');
     }
+
+    //Hiển thị các câu hỏi đã xóa
+    public function ThungRac()
+    {
+        //Tìm Câu hỏi đã xóa
+        $cauhoi = cau_hoi::onlyTrashed()
+                    ->orderBy('deleted_at', 'desc')->get();
+
+        return view('ThungRacCauHoi',['cauhoidaxoa'=>$cauhoi]);
+    }
+
+
+    //Khôi phục câu hỏi đã xóa
+    public function KhoiPhuc($id)
+    {
+        $cauhoi = cau_hoi::withTrashed()
+                    ->where('id','=',$id)
+                    ->restore();
+
+        self::success('Restore success');
+        return redirect()->route('ThungRacCauHoiRoute');
+    }
+
+    //Xóa vĩnh viễn
+    public function Xoa($id)
+    {
+
+        $cauhoi = cau_hoi::where('id',$id)->forceDelete();
+        self::success('Deleted success');
+                    
+        return redirect()->route('ThungRacCauHoiRoute');
+    }
+
 }

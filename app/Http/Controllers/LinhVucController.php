@@ -50,11 +50,12 @@ class LinhVucController extends Controller
         }
     }
 
+    //Xóa lĩnh vực vào thùng rác
     public function XoaLinhVuc($id){
         $linhvuc = Linh_Vuc::find($id);
         
         if($linhvuc == null){
-            self::error('Add Linh Vuc in Recycle');
+            self::error('Add Linh Vuc in Recycle false!');
             return redirect()->route('LinhVucRoute');
         
         }

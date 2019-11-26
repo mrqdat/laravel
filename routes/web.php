@@ -58,6 +58,14 @@ Route::get('Cauhoi', 'CauHoiController@LayDataCauHoi')->name('CauHoiRoute');
     //Xoa cau hoi
     Route::get('/XoaCauHoi/{id}','CauHoiController@XoaDataCauHoi')->name('XoaCauHoi');
 
+    //Thùng rác câu hỏi
+    Route::get('ThungRacCauHoi','CauHoiController@ThungRac')->name('ThungRacCauHoiRoute');
+
+    //Khôi phục
+    Route::get('KhoiPhucCauHoi/{id}','CauHoiController@KhoiPhuc')->name('KhoiPhucCauHoiRoute');
+
+    //Xóa vĩnh viễn
+    Route::get('XoaLuonCauHoi/{id}','CauHoiController@Xoa')->name('XoaLuonCauHoiRoute');
 
 
 

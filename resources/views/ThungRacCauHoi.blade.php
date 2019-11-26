@@ -26,36 +26,27 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Câu hỏi</strong>
+                            <strong class="card-title">Câu hỏi đã xóa</strong>
                         </div>
                         <div class="card-body">
                             <div id="bootstrap-data-table-export_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="dataTables_length" id="bootstrap-data-table-export_length">
-                                        <a href="{{route('ThemCauHoiRoute')}}" class="btn btn-primary btn-sm">
-                                            <div class="icon-container" style="width:90px;">
-                                                <span class="ti-plus" style="color:antiquewhite"></span>
-                                                <span class="icon-name" style="color:antiquewhite">Thêm</span>
-                                            </div>
+                                        <a href="{{route('CauHoiRoute')}}">
+                                            <div class="icon-container">
+                                                <span class="ti-angle-left"></span>
+                                                <span class="icon-name">Quản lý câu hỏi</span>
+                                            </div> 
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-3">
+                                    <div class="col-sm-12 col-md-6">
                                         <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
                                             <label><input type="search" class="form-control form-control-sm" placeholder="Tìm kiếm" aria-controls="bootstrap-data-table-export"></label>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-3">
-                                        <a href="{{route('ThungRacCauHoiRoute')}}" class="btn btn-danger btn-sm">
-                                            <div class="icon-container"  style="width:110px;">
-                                                <span class="ti-trash" style="color:antiquewhite"></span>
-                                                <span class="icon-name" style="color:antiquewhite">Thùng rác</span>
-                                            </div>
-                                        </a>
-                                    </div>
                                 </div>
-                                    <br>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <table id="bootstrap-data-table-export" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table-export_info">
@@ -74,7 +65,7 @@
                                 </thead>
                                 
                                 <tbody>
-                                    @foreach ($noidung as $item)
+                                    @foreach ($cauhoidaxoa as $item)
                                     <tr role="row" class="odd">
                                         <td class="sorting_1">{{$item->id}}</td>
                                         <td>{{$item->noi_dung}}</td>
@@ -85,11 +76,11 @@
                                         <td>{{$item->phuong_an_B}}</td>
                                         <td>{{$item->phuong_an_C}}</td>
                                         <td>{{$item->phuong_an_D}}</td>
-                                        <td><a href="{{Route('SuaCauHoiRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
-                                            <i class="fa fa-wrench"></i>
+                                        <td><a href="{{route('KhoiPhucCauHoiRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
+                                            <i class="fa fa-undo"></i>
                                         </a></td>
-                                    <td><a href="{{route('XoaCauHoi',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-ban"></i>
+                                    <td><a href="{{route('XoaLuonCauHoiRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
+                                            <i class="fa fa-trash-o"></i>
                                         </a></td>
                                     </tr>
                                     @endforeach
