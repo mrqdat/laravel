@@ -130,6 +130,15 @@ Route::get('GoiCredit','GoiCreditController@LayDataGoiCredit')->name('GoiCreditR
     //Xóa gói credit
     Route::get('/Xoagoicredit/{id}','GoiCreditController@XoaDataGoiCredit')->name('XoaGoiCreditRoute');
 
+    //Thùng rác gói credit
+   Route::get('ThungRacGoiCredit', 'GoiCreditController@ThungRac')->name('ThungRacGoiCreditRoute');
+
+   //Khôi phục gói credit
+   Route::get('KhoiPhucGoiCredit/{id}', 'GoiCreditController@KhoiPhuc')->name('KhoiPhucGoiCreditRoute');
+
+   //Xóa gói credit khỏi thùng rác
+   Route::get('Xoa/{id}', 'GoiCreditController@Xoa')->name('XoaVVGoiCreditRoute');
+
 
 
 

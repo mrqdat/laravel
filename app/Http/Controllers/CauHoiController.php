@@ -107,8 +107,7 @@ class CauHoiController extends Controller
         $cauhoi = cau_hoi::find($id);
         
         if($cauhoi == null){
-            self::error('Add Cau Hoi i
-+            n Recycle false!');
+            self::error('Add Cau Hoi in Recycle false!');
             return redirect()->route('CauHoiRoute');
         
         }
