@@ -1,5 +1,17 @@
 @extends('layout')
 @section('content')
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <div class="dataTables_length" id="bootstrap-data-table-export_length">
+                <a href="{{route('CauHoiRoute')}}">
+                    <div class="icon-container">
+                        <span class="ti-angle-left"></span>
+                        <span class="icon-name">Quản lý câu hỏi</span>
+                    </div> 
+                    </a>
+                </div>
+            </div>
+        </div>
         <div class="card-header">
             <strong>Thêm mới câu hỏi</strong>
         </div>
@@ -7,48 +19,25 @@
             @csrf
             <div class="card-body card-block">
                 <div class="has-success form-group">
-                    <label for="inputIsValid" class=" form-control-label">Nhập nội dung</label>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="Noidung">
-                    <label for="inputIsValid" class=" form-control-label">Nhập đáp án</label>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="Dapan">
-                    <label for="inputIsValid" class=" form-control-label">Nhập Id lĩnh vực</label>
-                    <div class="card">
-                            <div class="card-body">
-                                <select data-placeholder="Choose a Country..." class="standardSelect" tabindex="-1" style="display: none;">
-                                    <option value=""></option>
-                                    <option value="United States">United States</option>
-                                    <option value="United Kingdom">United Kingdom</option>
-                                    <option value="Afghanistan">Afghanistan</option>
-                                    <option value="Aland Islands">Aland Islands</option>
-                                    <option value="Albania">Albania</option>
-                                    <option value="Algeria">Algeria</option>
-                                    <option value="American Samoa">American Samoa</option>
-                                    <option value="Andorra">Andorra</option>
-                                    <option value="Angola">Angola</option>
-                                    <option value="Anguilla">Anguilla</option>
-                                    <option value="Antarctica">Antarctica</option>
-                                </select><div class="chosen-container chosen-container-single" title="" style="width: 100%;"><a class="chosen-single chosen-default">
-                                <span>Choose a Country...</span>
-                                <div><b></b></div>
-                                </a>
-                                <div class="chosen-drop">
-                                <div class="chosen-search">
-                                    <input class="chosen-search-input" type="text" autocomplete="off" tabindex="1">
-                                </div>
-                                <ul class="chosen-results"><li class="active-result" data-option-array-index="1">United States</li><li class="active-result" data-option-array-index="2">United Kingdom</li><li class="active-result" data-option-array-index="3">Afghanistan</li><li class="active-result" data-option-array-index="4">Aland Islands</li><li class="active-result" data-option-array-index="5">Albania</li><li class="active-result" data-option-array-index="6">Algeria</li><li class="active-result" data-option-array-index="7">American Samoa</li><li class="active-result" data-option-array-index="8">Andorra</li><li class="active-result" data-option-array-index="9">Angola</li><li class="active-result" data-option-array-index="10">Anguilla</li><li class="active-result" data-option-array-index="11">Antarctica</li></ul>
-                                </div></div>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" pattern="[^.!@#$%^&*()]{2,200}" title="Không chứa các ký tự đặc biệt và độ dài từ 2 ký tự" placeholder="Nội dung" name="Noidung">
+                    <br>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" pattern="{2,200}" title="Độ dài từ 2-200 ký tự" placeholder="Đáp án" name="Dapan">
+                    <br>
+                    <label for="inputIsValid" class=" form-control-label">Chọn lĩnh vực</label>
+                    <div class="row form-group">
+                            <div class="col-12 col-md-12">
+                                <select name="IdLV" id="select" class="form-control">
+                                    @foreach ($tenLinhVuc as $item)
+                                     <option value="{{$item->id}}">{{$item->ten_linh_vuc}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
-                    <label for="inputIsValid" class=" form-control-label">Nhập loại</label>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="Loai">
-                    <label for="inputIsValid" class=" form-control-label">Nhập Phương án A</label>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="PaA">
-                    <label for="inputIsValid" class=" form-control-label">Nhập Phương án B</label>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="PaB">
-                    <label for="inputIsValid" class=" form-control-label">Nhập Phương án C</label>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="PaC">
-                    <label for="inputIsValid" class=" form-control-label">Nhập Phương án D</label>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" name="PaD">
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Loại" pattern="[A-Za-z0-9_\.]{2,50}" title="Độ dài từ 2 ký tự" name="Loai"><br>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án A" name="PaA"><br>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án B" name="PaB"><br>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án C" name="PaC"><br>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án D" name="PaD"><br>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">
                         <i class="fa fa-plus"></i> Thêm

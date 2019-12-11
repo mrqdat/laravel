@@ -38,10 +38,15 @@
                                             </a>
                                         </div>
                                     </div>
-                                    <div class="col-sm-12 col-md-6">
+                                    <div class="col-sm-12 col-md-3">
                                         <div id="bootstrap-data-table-export_filter" class="dataTables_filter">
-                                            <label>Tìm kiếm:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="bootstrap-data-table-export"></label>
+                                           <input type="search" class="form-control form-control-sm" placeholder="Tìm Kiếm" aria-controls="bootstrap-data-table-export">
                                         </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <a href="{{Route('ThungRacGoiCreditRoute')}}" class="btn btn-danger btn-sm">
+                                            Thùng rác
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -62,7 +67,7 @@
                                         <td>{{$item->ten_goi}}</td>
                                         <td>{{$item->credit}}</td>
                                         <td>{{$item->so_tien}}</td>
-                                        <td><a href="#" class="btn btn-success btn-sm">
+                                        <td><a href="{{route('SuaGoiCreditRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-wrench"></i>
                                         </a></td>
                                     <td><a href="{{route('XoaGoiCreditRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
