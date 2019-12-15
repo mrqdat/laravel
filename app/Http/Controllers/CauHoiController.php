@@ -87,14 +87,14 @@ class CauHoiController extends Controller
         else{
             //cập nhật câu hỏi
             $cauhoi->update(
-                ['noi_dung'=>$req->Noidung,
-                'dap_an'=>$req->Dapan,
-                'id_linh_vuc'=>$req->IdLV,
-                'loai'=>$req->Loai,
-                'phuong_an_A'=>$req->PaA,
-                'phuong_an_B'=>$req->PaB,
-                'phuong_an_C'=>$req->PaC,
-                'phuong_an_D'=>$req->PaD
+                ['noi_dung'     =>$req->Noidung,
+                'dap_an'        =>$req->Dapan,
+                'id_linh_vuc'   =>$req->IdLV,
+                'loai'          =>$req->Loai,
+                'phuong_an_A'   =>$req->PaA,
+                'phuong_an_B'   =>$req->PaB,
+                'phuong_an_C'   =>$req->PaC,
+                'phuong_an_D'   =>$req->PaD
             ]);
             
             self::success('Update success');
