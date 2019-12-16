@@ -33,7 +33,7 @@
                                 </select>
                             </div>
                         </div>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Loại" pattern="[A-Za-z0-9_\.]{2,50}" title="Độ dài từ 2 ký tự" name="Loai"><br>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Loại" pattern="{2,50}" title="Độ dài từ 2 ký tự" name="Loai"><br>
                     <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án A" name="PaA"><br>
                     <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án B" name="PaB"><br>
                     <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án C" name="PaC"><br>
