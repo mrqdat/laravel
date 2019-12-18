@@ -34,4 +34,5 @@ class QuanTriVienController extends Controller
         Auth::logout();
         return redirect()->route('TrangDangNhap');
     }
+
 }

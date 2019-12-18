@@ -160,3 +160,8 @@ Route::get('LichSuMua','LichSuMuaController@LayDataLichSuMua')->name('LichSuMuaR
 
 Route::get('Chitietluotchoi','ChiTietLuotChoiController@LayDataChiTietLuotChoi')->name('ChiTietLuotChoiRoute');
 });
+
+//Trang profile
+Route::get('Profile/{id}', function ($id) {
+    return view('Profile');
+});

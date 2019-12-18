@@ -11,7 +11,7 @@ class CauhoiController extends Controller
 {
     public function LayCauHoi(Request $req){
         $linhvuc = $req->query('linh_vuc');
-        $cauhoi = cau_hoi::where('linh_vuc_id', $linhvuc,)->get();
+        $cauhoi = cau_hoi::where('linh_vuc_id', $linhvuc)->get();
         $result = [
             'success'   =>true,
             'data'      =>$cauhoi

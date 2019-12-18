@@ -19,3 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('CauHoiJson','API\CauhoiController@LayCauHoi');
 Route::get('LinhVucJson', 'API\LinhVucController@LayLinhVuc');
 Route::get('GoiCreditJson', 'API\GoiCreditController@LayGoiCredit');
+Route::get('NguoiChoiJson', 'API\NguoiChoiController@LayNguoiChoi');
+Route::get('LuotChoiJson', 'API\LuotChoiController@LayLuotChoi');
+Route::get('CTLuotChoiJson', 'API\ChiTietLuotChoiController@LayCTLuotChoi');
