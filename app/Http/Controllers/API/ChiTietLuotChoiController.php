@@ -18,4 +18,19 @@ class ChiTietLuotChoiController extends Controller
         ];
         return response()->json($ctluotchoi);
     }
+
+    public function ThemCTLuotChoi(Request $req){
+        $id_cauhoi    =   $req->query('cauhoi');
+        $id_luotchoi  =   $req->query('luotchoi');
+        $dapan      =   $req->query('dapan');
+        $diem       =   $req->query('diem');
+
+        $ctlc = 
+            ['luot_choi_id'   => $id_luotchoi,
+            'cau_hoi_id'    =>  $id_cauhoi,
+            'phuong_an'     => $dapan,
+            'diem'          =>$diem];
+            Chi_tiet_luot_choi::create($ctlc);
+       // return response('<script>alert("thêm thành công")</script>');
+    }
 }

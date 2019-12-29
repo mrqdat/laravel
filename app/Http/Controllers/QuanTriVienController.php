@@ -16,14 +16,14 @@ class QuanTriVienController extends Controller
     public function dangnhap(){
         return view('login');
     }
+    var $name=null;
     public function XuLyDangNhap(DangNhapRequest $req)
     {
         $tenDangNhap = $req->username;
         $matKhau = $req->password;
-
         if(Auth::attempt(['ten_dang_nhap' => $tenDangNhap, 'password' => $matKhau])){
             self::success('Login success! Hello '.$tenDangNhap);
-            return Redirect()->route('admindangnhap');
+            return Redirect()->route('admindangnhap',['admin'=>$tenDangNhap]);
         }
         else{
             echo "<script>alert('Login failed')</script>";
@@ -35,4 +35,10 @@ class QuanTriVienController extends Controller
         return redirect()->route('TrangDangNhap');
     }
 
+    public function inProfile($id)
+    {
+        $qtv = quan_tri_vien::find($id);
+                // ->where('id','=',$id)->get();
+        return view('Profile',['admin'   =>  $qtv]);
+    }
 }

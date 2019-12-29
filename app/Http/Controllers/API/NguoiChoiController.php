@@ -17,4 +17,27 @@ class NguoiChoiController extends Controller
         ];
         return response()->json($nguoichoi);
     }
+
+    public function ThemNguoiChoi(Request $req)
+    {
+        $tdn = $req->query('tendangnhap');
+        $matkhau1 = $req->query('matkhau');
+        $matkhau2 = $req->query('matkhaucf');
+        $email = $req->query('email');
+
+        if($matkhau1 == $matkhau2){
+            $nguoichoi = Nguoi_choi::create([
+            'ten_dang_nhap' => $tdn,
+            'mat_khau'      => $matkhau2,
+            'Email'         => $email,
+            'hinh_dai_dien' => "",
+            'diem_cao_nhat' =>0,
+            'credit'        =>0
+        ]);
+        }
+        else
+        return response("<script>alert('khong them dc')</script>");
+
+        
+    }
 }

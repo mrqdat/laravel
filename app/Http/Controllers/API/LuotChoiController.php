@@ -18,4 +18,19 @@ class LuotChoiController extends Controller
         ];
         return response()->json($luotchoi);
     }
+    public function TaoLuotChoi(Request $req)
+    {
+        $user = $req->user;
+        $socau = $req->socau;
+        $diem = $req->diem;
+        $gio = $req->time;
+
+        $luotchoi = Luot_choi::create(
+            ['nguoi_choi_id'    =>  $user,
+             'so_cau'           =>  $socau,
+             'diem'            =>  $diem,
+             'ngay_gio'        =>  $gio]
+        );
+
+    }
 }
