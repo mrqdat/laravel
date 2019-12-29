@@ -19,9 +19,9 @@
             @csrf
             <div class="card-body card-block">
                 <div class="has-success form-group">
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" pattern="[^.!@#$%^&*()]{2,200}" title="Không chứa các ký tự đặc biệt và độ dài từ 2 ký tự" placeholder="Nội dung" name="Noidung">
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" title="Không chứa các ký tự đặc biệt và độ dài từ 2 ký tự" placeholder="Nội dung" name="Noidung">
                     <br>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" pattern="{2,200}" title="Độ dài từ 2-200 ký tự" placeholder="Đáp án" name="Dapan">
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" title="Độ dài từ 2-200 ký tự" placeholder="Đáp án" name="Dapan">
                     <br>
                     <label for="inputIsValid" class=" form-control-label">Chọn lĩnh vực</label>
                     <div class="row form-group">
@@ -33,7 +33,7 @@
                                 </select>
                             </div>
                         </div>
-                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Loại" pattern="{2,50}" title="Độ dài từ 2 ký tự" name="Loai"><br>
+                    <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Loại" title="Độ dài từ 2 ký tự" name="Loai"><br>
                     <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án A" name="PaA"><br>
                     <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án B" name="PaB"><br>
                     <input type="text" id="inputIsValid" class="is-valid form-control-success form-control" placeholder="Phương án C" name="PaC"><br>
