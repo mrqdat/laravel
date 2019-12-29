@@ -24,13 +24,14 @@ class NguoiChoiController extends Controller
         $matkhau1 = $req->query('matkhau');
         $matkhau2 = $req->query('matkhaucf');
         $email = $req->query('email');
+        $hinhdaidien = $req->query('hinhdaidien');
 
         if($matkhau1 == $matkhau2){
             $nguoichoi = Nguoi_choi::create([
             'ten_dang_nhap' => $tdn,
             'mat_khau'      => $matkhau2,
             'Email'         => $email,
-            'hinh_dai_dien' => "",
+            'hinh_dai_dien' => $hinhdaidien,
             'diem_cao_nhat' =>0,
             'credit'        =>0
         ]);
