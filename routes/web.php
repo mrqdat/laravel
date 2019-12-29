@@ -33,8 +33,11 @@ Route::middleware('auth')->group(function(){
      })->name('indexpage');
     
     Route::post('Trangchu', function ($id) {
-        return view('index');   
+        return view('layout');   
     })->name('admindangnhap');
+
+    //Trang profile
+    Route::get('Profile/{id}', 'QuanTriVienController@inProfile')->name('Profile');
 
 
 
@@ -160,3 +163,4 @@ Route::get('LichSuMua','LichSuMuaController@LayDataLichSuMua')->name('LichSuMuaR
 
 Route::get('Chitietluotchoi','ChiTietLuotChoiController@LayDataChiTietLuotChoi')->name('ChiTietLuotChoiRoute');
 });
+
