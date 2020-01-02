@@ -61,7 +61,7 @@
                                     <td><a href="{{Route('KhoiPhucLinhVucRoute',["id"=>$item->id])}}" class="btn btn-success btn-sm">
                                             <i class="fa fa-undo"></i>
                                         </a></td>
-                                        <td><a href="{{Route('XoaVVLinhVucRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
+                                        <td><a href="{{Route('XoaLuonLinhVucRoute',["id"=>$item->id])}}" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i>
                                         </a></td>
                                     </tr>

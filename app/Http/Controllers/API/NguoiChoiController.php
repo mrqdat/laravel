@@ -9,8 +9,8 @@ use App\Nguoi_choi;
 class NguoiChoiController extends Controller
 {
     public function LayNguoiChoi(Request $req){
-        $user = $req->query('username');
-        $nguoichoi = Nguoi_choi::where('ten_dang_nhap',$user)->get();
+        //$user = $req->query('username');
+        $nguoichoi = Nguoi_choi::All();
         $result = [
             'success'   =>true,
             'data'      =>$nguoichoi
@@ -27,14 +27,14 @@ class NguoiChoiController extends Controller
         $hinhdaidien = $req->query('hinhdaidien');
 
         if($matkhau1 == $matkhau2){
-            $nguoichoi = Nguoi_choi::create([
-            'ten_dang_nhap' => $tdn,
-            'mat_khau'      => $matkhau2,
-            'Email'         => $email,
-            'hinh_dai_dien' => $hinhdaidien,
-            'diem_cao_nhat' =>0,
-            'credit'        =>0
-        ]);
+                $nguoichoi = Nguoi_choi::create([
+                'ten_dang_nhap' => $tdn,
+                'mat_khau'      => $matkhau2,
+                'Email'         => $email,
+                'hinh_dai_dien' => $hinhdaidien,
+                'diem_cao_nhat' =>0,
+                'credit'        =>0
+            ]);
         }
         else
         return response("<script>alert('khong them dc')</script>");
