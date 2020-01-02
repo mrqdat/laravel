@@ -61,7 +61,7 @@
                                         <td>{{$item->LayTenNguoiChoi->ten_dang_nhap}}</td>
                                         <td>{{$item->so_cau}}</td>
                                         <td>{{$item->diem}}</td>
-                                        <td>{{$item->ngay_gio}}</td>2
+                                        <td>{{$item->ngay_gio}}</td>
                                         <td><a href="#" class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash-o"></i> Xóa
                                         </a></td>
