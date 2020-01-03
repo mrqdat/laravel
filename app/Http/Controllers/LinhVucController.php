@@ -86,7 +86,7 @@ class LinhVucController extends Controller
     }
 
     //Xóa vĩnh viễn
-    public function Xoa($id)
+    public function XoaLV($id)
     {
 
         $linhvuc = Linh_Vuc::where('id',$id)->forceDelete();
