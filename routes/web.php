@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 
 });
 
@@ -99,7 +99,7 @@ Route::get('LinhVuc', 'LinhVucController@LayDataLinhVuc')->name('LinhVucRoute');
    Route::get('KhoiPhucLinhVuc/{id}', 'LinhVucController@KhoiPhuc')->name('KhoiPhucLinhVucRoute');
 
    //Xóa lĩnh vực khỏi thùng rác
-   Route::get('Xoa/{id}', 'LinhVucController@Xoa')->name('XoaLuonLinhVucRoute');
+  Route::get('XoaLuonLinhVuc/{id}','LinhVucController@Xoa')->name('XoaLuonLinhVucRoute');
 
 
 
