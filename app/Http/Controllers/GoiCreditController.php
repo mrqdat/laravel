@@ -18,6 +18,7 @@ class GoiCreditController extends Controller
     }
     public function ThemDataGoiCredit(Request $req){
         Goi_Credit::create(['ten_goi'=>$req->tengoi,'credit'=>$req->socredit,'so_tien'=>$req->sotien]);
+        self::success('Add success');
         return redirect()->route('GoiCreditRoute');
     }
 

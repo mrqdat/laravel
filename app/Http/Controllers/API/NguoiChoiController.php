@@ -9,8 +9,8 @@ use App\Nguoi_choi;
 class NguoiChoiController extends Controller
 {
     public function LayNguoiChoi(Request $req){
-        $user = $req->query('username');
-        $nguoichoi = Nguoi_choi::where('ten_dang_nhap',$user)->get();
+        //$user = $req->query('username');
+        $nguoichoi = Nguoi_choi::All();
         $result = [
             'success'   =>true,
             'data'      =>$nguoichoi
@@ -20,24 +20,16 @@ class NguoiChoiController extends Controller
 
     public function ThemNguoiChoi(Request $req)
     {
-        $tdn = $req->query('tendangnhap');
-        $matkhau1 = $req->query('matkhau');
-        $matkhau2 = $req->query('matkhaucf');
-        $email = $req->query('email');
-        $hinhdaidien = $req->query('hinhdaidien');
+        $nguoichoi = new Nguoi_choi;
+        
+        $nguoichoi->ten_dang_nhap   = $req->tendangnhap;
+        $nguoichoi->mat_khau        = $req->matkhau;
+        $nguoichoi->Email           = $req->email;
+        $nguoichoi->hinh_dai_dien   = null;
+        $nguoichoi->diem_cao_nhat   =   0;
+        $nguoichoi->credit          =   0;
 
-        if($matkhau1 == $matkhau2){
-            $nguoichoi = Nguoi_choi::create([
-            'ten_dang_nhap' => $tdn,
-            'mat_khau'      => $matkhau2,
-            'Email'         => $email,
-            'hinh_dai_dien' => $hinhdaidien,
-            'diem_cao_nhat' =>0,
-            'credit'        =>0
-        ]);
-        }
-        else
-        return response("<script>alert('khong them dc')</script>");
+        $nguoichoi->save();
 
         
     }
